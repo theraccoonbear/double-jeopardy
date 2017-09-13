@@ -1,0 +1,1 @@
+openssl req -nodes -new -x509  -subj "/C=US/ST=Wisconsin/L=Madison/O=TRB Technology Services, LLC/OU=Org/CN=double-jeopardy.dev" -keyout /opt/build/ssl/server.key -out /opt/build/ssl/server.cert

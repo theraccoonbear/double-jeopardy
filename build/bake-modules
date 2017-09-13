@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "Baking modules into docker image"
+cd /opt/build
+#cpanm -v --installdeps .; # with tests
+cpanm -v --notest --installdeps .; # NO TESTS!
