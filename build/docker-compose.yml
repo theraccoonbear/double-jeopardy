@@ -4,13 +4,13 @@ services:
     build: .
     image: theraccoonbear/double-jeopardy:v0.1
     hostname: double-jeopardy
-    environment:
-      - DBNAME=double-jeopardy
-      - DBUSER=double-jeopardy
-      - DBPASS=password
-      - DBHOST=double-jeopardy-mongodb
-      - DBPORT=27017
-      - APP_ENV=development
+    # environment:
+    #   - DBNAME=double-jeopardy
+    #   - DBUSER=double-jeopardy
+    #   - DBPASS=password
+    #   - DBHOST=double-jeopardy-mongodb
+    #   - DBPORT=27017
+    #   - APP_ENV=development
     container_name: 'double-jeopardy-www'
     ports:
       - '5000:5000'
@@ -18,25 +18,25 @@ services:
       - './build:/opt/build'
     networks:
       - app
-    links:
-      - 'double-jeopardy-mongodb:double-jeopardy-mongodb'
+    # links:
+    #   - 'double-jeopardy-mongodb:double-jeopardy-mongodb'
     #entrypoint: /opt/build/run
-    depends_on:
-      - double-jeopardy-mongodb
+    # depends_on:
+    #   - double-jeopardy-mongodb
 
-  double-jeopardy-mongodb:
-    hostname: double-jeopardy-monogodb
-    container_name: double-jeopardy-mongodb
-    image: mongo:latest
-    networks:
-      - app
-    ports:
-      - '27017:27017'
-    volumes:
-      - double-jeopardy-mongodb-storage:/data/mongo
+  # double-jeopardy-mongodb:
+  #   hostname: double-jeopardy-monogodb
+  #   container_name: double-jeopardy-mongodb
+  #   image: mongo:latest
+  #   networks:
+  #     - app
+  #   ports:
+  #     - '27017:27017'
+  #   volumes:
+  #     - double-jeopardy-mongodb-storage:/data/mongo
 
-volumes:
-  double-jeopardy-mongodb-storage: 
+# volumes:
+#   double-jeopardy-mongodb-storage: 
 
 networks:
   default:
