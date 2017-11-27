@@ -1,4 +1,4 @@
-from perl:latest
+FROM perl:latest
 
 ADD . /opt/build
 WORKDIR /opt/build
