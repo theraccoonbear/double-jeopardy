@@ -14,5 +14,5 @@ build:
   stage: build
   script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.madisonhub.org:4567
-    - docker build -t $CONTAINER_RELEASE_IMAGE .
+    - docker build -t $CONTAINER_RELEASE_IMAGE -f ./build/Dockerfile ./build
     - docker push $CONTAINER_RELEASE_IMAGE
