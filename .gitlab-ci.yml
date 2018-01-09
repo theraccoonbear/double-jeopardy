@@ -8,7 +8,7 @@ stages:
 - deploy
 
 variables:
-  CONTAINER_RELEASE_IMAGE: gitlab.madisonhub.org:4567/trbinfra/double-jeopardy:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: gitlab.madisonhub.org:4567/trbinfra/double-jeopardy:latest
 
 build:
   stage: build
