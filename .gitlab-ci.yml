@@ -8,11 +8,11 @@ stages:
 - deploy
 
 variables:
-  CONTAINER_RELEASE_IMAGE: gitlab.madisonhub.org:4567/trbinfra/double-jeopardy:latest
+  CONTAINER_RELEASE_IMAGE: images.madisonhub.org:4567/trbinfra/double-jeopardy:latest
 
 build:
   stage: build
   script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.madisonhub.org:4567
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN images.madisonhub.org:4567
     - docker build -t $CONTAINER_RELEASE_IMAGE -f ./build/Dockerfile ./build
     - docker push $CONTAINER_RELEASE_IMAGE
